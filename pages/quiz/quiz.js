@@ -22,8 +22,8 @@ function alterarAssunto() {
     const iconeImg = document.querySelector(".assunto_icone img")
     const assuntoTitulo = document.querySelector(".assunto h1")
 
-    divIcone.classList.add(assunto.toLocaleLowerCase())
-    iconeImg.setAttribute("src", `../../assets/images/icon-${assunto.toLocaleLowerCase()}.svg`)
+    divIcone.classList.add(assunto.toLowerCase())
+    iconeImg.setAttribute("src", `../../assets/images/icon-${assunto.toLowerCase()}.svg`)
     iconeImg.setAttribute("alt", `icone de ${assunto}`)
     assuntoTitulo.innerText = assunto
 }
@@ -51,7 +51,7 @@ function montarPergunta() {
                 <h2>${alterarSinais(quiz.questions[pergunta-1].question)}</h2>
             </div>
             <div class="barra_progresso">
-                <div style="width: ${pergunta * 10}"></div>
+                <div style="width: ${pergunta * 10}%"></div>
             </div>
         </section>
 
@@ -101,7 +101,7 @@ function montarPergunta() {
 }
 
 function alterarSinais(texto) {
-    return texto.replace(/>/g, "&lt;").replace(/>/g, "&gt;")
+    return texto.replace(/</g, "&lt;").replace(/>/g, "&gt;")
 }
 
 function guardarResposta(evento) {
@@ -124,6 +124,7 @@ function validarResposta() {
         botaoEnviar.addEventListener("click", proximaPergunta)
     }
 
+
     if (resposta === quiz.questions[pergunta-1].answer) {
         document.querySelector(`label[for='${idInputResposta}']`).setAttribute("id", "correta")
         pontos = pontos + 1
@@ -133,7 +134,6 @@ function validarResposta() {
     }
 
     pergunta = pergunta + 1
-    console.log(pergunta)
 }
 
 function finalizar() {

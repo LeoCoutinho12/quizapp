@@ -1,4 +1,4 @@
-import { verificarTema, trocarTema } from "../../helpers/tema-helper.js";
+import { verificarTema, trocarTema } from "../../helpers/tema-helper.js"
 
 const botaoTema = document.querySelector(".tema button")
 const body = document.querySelector("body")
@@ -18,8 +18,8 @@ function alterarAssunto() {
     const iconeImg = document.querySelector(".assunto_icone img")
     const assuntoTitulo = document.querySelector(".assunto h1")
 
-    divIcone.classList.add(assunto.toLocaleLowerCase())
-    iconeImg.setAttribute("src", `../../assets/images/icon-${assunto.toLocaleLowerCase()}.svg`)
+    divIcone.classList.add(assunto.toLowerCase())
+    iconeImg.setAttribute("src", `../../assets/images/icon-${assunto.toLowerCase()}.svg`)
     iconeImg.setAttribute("alt", `icone de ${assunto}`)
     assuntoTitulo.innerText = assunto
 }
@@ -36,7 +36,7 @@ function inserirResultado() {
 
         <strong>${pontos}</strong>
 
-        <p>8 de 10</p>
+        <p>${pontos} de 10</p>
     `
 }
 
