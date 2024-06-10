@@ -64,11 +64,6 @@ header {
     border-radius: 5px;
 }
 
-
-.assunto h1 {
-    color: var(--primary-text-color);
-}
-
 .assunto_icone.html {
     background: var(--bg-html);
 }
@@ -89,7 +84,7 @@ header {
     width: 100%;
 }
 
-.assunto_icone h1 {
+.assunto h1 {
     font-size: 18px;
     font-weight: 500;
     color: var(--primary-text-color);
